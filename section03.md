@@ -34,7 +34,7 @@ const app = express(); // app이 어플리케이션 객체
       next(); 
     }
     
-    app.use(logger); // use라는 함수를 사용하여 logger 미들웨어 추가
+    app.use(logger); // use 함수를 사용하여 logger 미들웨어 추가
     app.use(logger2);
   ```
   실행결과
