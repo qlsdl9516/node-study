@@ -21,7 +21,10 @@ const app = express(); // app이 어플리케이션 객체
   
 ### 미들웨어
 - 미들웨어: 함수들의 연속 (use 함수를 사용하여 미들웨어 추가)
-- 일반 미들웨어의 파라미터: (requset, response, next)
+- 미들웨어의 파라미터
+  일반 미들웨어 | 에러 미들웨어
+  ---------- | ----------
+  (request, response, next) | (error, request, response, next)
 - 미들웨어는 순차적으로 실행 (다음 함수를 실행시키기 위하여 next 함수를 호출해야 함)
   ```
     function logger(req, res, next) {
@@ -53,6 +56,25 @@ const app = express(); // app이 어플리케이션 객체
     
     app.use(morgan('dev')); 3. 미들웨어 추가하기
   ```
-- 에러 미들웨어
-  - 에러 미들웨어의 파라미터: (error, request, response, next)
+- 에러 미들웨어 사용하기
+  ```
+    const express = require('express');
+    const app = express();
     
+    function commommw(req, res, next) {
+      console.log('commonmw');
+      next(new Error('error ouccered'));
+    }
+    
+    function errormw(err, req, res, next) { // 에러 미들웨어
+      console.log(err.message);
+      next();
+    }
+    
+    app.use(commonmw);
+    app.use(errormw);
+  ```
+  실행결과
+  ```
+    commonmw error ouccered
+  ```
