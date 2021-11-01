@@ -15,16 +15,18 @@ const app = express(); // app이 어플리케이션 객체
   3. 서버를 요청 대기 상태로 생성
   ```
     app.listen(3000, function() {
-    console.log('Server is running');
+      console.log('Server is running');
     })
   ```
   
 ### 미들웨어
 - 미들웨어: 함수들의 연속 (use 함수를 사용하여 미들웨어 추가)
+- 일반 미들웨어의 파라미터: (requset, response, next)
+- 미들웨어는 순차적으로 실행 (다음 함수를 실행시키기 위하여 next 함수를 호출해야 함)
   ```
-    function logger(req, res, next) { // 미들웨어 인터페이스는 정해져 있음 (requset, response, next)
+    function logger(req, res, next) {
       console.log("i am logger");
-      next(); // 미들웨어 함수는 마지막에 다음 함수를 실행 시키기 위하여 next 함수를 호출해야 함. 
+      next();
     }
     
     function logger2(req, res, next) {
@@ -32,6 +34,25 @@ const app = express(); // app이 어플리케이션 객체
       next(); 
     }
     
-    app.use(logger) // use라는 함수를 사용하여 logger 미들웨어 추가
-    app.use(logger2)
+    app.use(logger); // use라는 함수를 사용하여 logger 미들웨어 추가
+    app.use(logger2);
   ```
+  실행결과
+  ```
+    i am logger i am logger2
+  ```
+- 서드파티 미들웨어 사용하기 
+  - npm 사이트를 참조하여 미들웨어 install 하기 ([npm 공식사이트](https://www.npmjs.com/))
+  ```
+    $ npm install morgan // 1. npm install 을 사용하여 미들웨어 설치
+  ```
+  ```
+    const express = require('express');
+    const morgan = require('morgan'); // 2. 미들웨어 가져오기
+    const app = express();
+    
+    app.use(morgan('dev')); 3. 미들웨어 추가하기
+  ```
+- 에러 미들웨어
+  - 에러 미들웨어의 파라미터: (error, request, response, next)
+    
