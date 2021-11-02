@@ -82,3 +82,16 @@ const app = express(); // app이 어플리케이션 객체
 - 라우팅: 요청 URL에 대해 적절한 핸들러 함수로 연결해주는 기능
 - 어플리케이션의 <code>get()</code>, <code>post()</code> 메소드로 구현
 - 라우팅을 위한 전용 Router 클래스 사용 가능
+
+### 요청 객체
+- 요청 객체(request): 클라이언트 요청 정보를 담은 객체
+- http 모듈의 request 객체를 래핑한 것
+- <code>req.params()</code>, <code>req.query()</code>, <code>req.body()</code> 메소드를 주로 사용
+
+### 응답 객체
+- 응답 객체(response): 클라이언트 응답 정보를 담은 객체
+- http 모듈의 response 객체를 래핑한 것
+- 응답 객체 메소드
+  - <code>res.send()</code>: 문자열을 클라이언트에 응답
+  - <code>res.status()</code>: http 상태코드를 클라이언트에 응답
+  - <code>res.json()</code>: json을 클라이언트에 응답
