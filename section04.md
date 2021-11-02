@@ -13,19 +13,19 @@
   ```
     {
       "dependencies": {
-      "express": "^4.17.1"
-    },
-    "name": "study",
-    "version": "1.0.0",
-    "main": "index.js",
-    "devDependencies": {},
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "description": ""
-  }
+        "express": "^4.17.1"
+      },
+      "name": "study",
+      "version": "1.0.0",
+      "main": "index.js",
+      "devDependencies": {},
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "author": "",
+      "license": "ISC",
+      "description": ""
+    }
   ```
 
 ### 패키지 관리
