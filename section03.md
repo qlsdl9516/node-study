@@ -98,3 +98,22 @@ const app = express(); // app이 어플리케이션 객체
   - <code>res.send()</code>: 문자열을 클라이언트에 응답
   - <code>res.status()</code>: http 상태코드를 클라이언트에 응답
   - <code>res.json()</code>: json을 클라이언트에 응답
+
+---
+### Hello World 예제
+- index.js 예제 코드
+```
+  const express = require('express')
+  const app = express();
+
+  app.get('/', (req, res) => {
+     res.send('Hello World');
+  });
+
+  app.listen(3000, () => {
+     console.log('Example app listening on port 3000');
+  })
+```
+
+- 코드 실행 결과
+` $ node index.js `
