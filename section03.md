@@ -99,6 +99,7 @@ const app = express(); // app이 어플리케이션 객체
   - <code>res.status()</code>: http 상태코드를 클라이언트에 응답
   - <code>res.json()</code>: json을 클라이언트에 응답
 
+  
 ---
 ### Hello World 예제
 - index.js 예제 코드
@@ -115,5 +116,19 @@ const app = express(); // app이 어플리케이션 객체
   })
 ```
 
+- 코드 실행
+``` 
+  $ node index.js 
+```  
 - 코드 실행 결과
-` $ node index.js `
+   
+![image](https://user-images.githubusercontent.com/92710241/139772575-b8729ea7-6436-40c7-a031-54213fc7db20.png)
+
+- get 요청
+``` 
+  $ curl -X GET '127.0.0.1:3000'
+```  
+
+- get 요청 결과
+  
+![image](https://user-images.githubusercontent.com/92710241/139774421-9fbf5bb2-d95a-4dd8-9b65-8e41882bb4f2.png)
