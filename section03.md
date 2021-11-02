@@ -80,3 +80,5 @@ const app = express(); // app이 어플리케이션 객체
   ```
 ### 라우팅
 - 라우팅: 요청 URL에 대해 적절한 핸들러 함수로 연결해주는 기능
+- 어플리케이션의 <code>get()</code>, <code>post()</code> 메소드로 구현
+- 라우팅을 위한 전용 Router 클래스 사용 가능
