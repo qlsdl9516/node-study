@@ -86,7 +86,10 @@ const app = express(); // app이 어플리케이션 객체
 ### 요청 객체
 - 요청 객체(request): 클라이언트 요청 정보를 담은 객체
 - http 모듈의 request 객체를 래핑한 것
-- <code>req.params()</code>, <code>req.query()</code>, <code>req.body()</code> 메소드를 주로 사용
+- 요청 객체 메소드
+  - <code>req.params()</code>
+  - <code>req.query()</code>
+  - <code>req.body()</code>
 
 ### 응답 객체
 - 응답 객체(response): 클라이언트 응답 정보를 담은 객체
